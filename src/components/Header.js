@@ -7,10 +7,7 @@ export default function Header() {
     <View style={styles.container}>
       <Ionicons name="camera-outline" style={styles.sendIcon} />
       <Image
-        source={{
-          uri:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png',
-        }}
+        source={require('../assets/logo.png')}
         style={{
           width: 300,
           height: 47,

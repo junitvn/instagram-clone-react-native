@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, FlatList} from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
+import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler';
 
 export default function Profile() {
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <View style={styles.header}>
         <Ionicons name="arrow-back-outline" style={styles.iconBack} />
       </View>
@@ -16,7 +16,7 @@ export default function Profile() {
         <View style={styles.infoRowContainer}>
           <Image
             source={require('./assets/avatar.jpg')}
-            style={{width: 100, height: 100, borderRadius: 50}}
+            style={{ width: 100, height: 100, borderRadius: 50 }}
           />
           <View style={styles.infoTextContainer}>
             <Text style={styles.textName}>leemer.d.sabo</Text>
@@ -45,25 +45,27 @@ export default function Profile() {
             <Text style={styles.textSub}>Following</Text>
           </View>
         </View>
-        <View style={{flex: 1, flexDirection: 'row'}}>
-          <View style={{flex: 1, flexDirection: 'column'}}>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <View style={{ flex: 1, flexDirection: 'column' }}>
             {imgData.slice(0, centerImgData).map((item) => (
-              <View style={{paddingTop: 20, paddingLeft: 20, paddingRight: 10}}>
+              <View style={{ paddingTop: 20, paddingLeft: 20, paddingRight: 10 }}>
                 <Image
+                  key={item.id}
                   source={item.imgSource}
                   resizeMode="cover"
-                  style={[{height: 200, width: '100%', borderRadius: 15}]}
+                  style={[{ height: 200, width: '100%', borderRadius: 15 }]}
                 />
               </View>
             ))}
           </View>
-          <View style={{flex: 1, flexDirection: 'column'}}>
+          <View style={{ flex: 1, flexDirection: 'column' }}>
             {imgData.slice(centerImgData).map((item) => (
-              <View style={{paddingTop: 20, paddingRight: 20, paddingLeft: 10}}>
+              <View style={{ paddingTop: 20, paddingRight: 20, paddingLeft: 10 }}>
                 <Image
+                  key={item.id}
                   source={item.imgSource}
                   resizeMode="cover"
-                  style={[{height: 200, width: '100%', borderRadius: 15}]}
+                  style={[{ height: 200, width: '100%', borderRadius: 15 }]}
                 />
               </View>
             ))}
@@ -75,12 +77,12 @@ export default function Profile() {
 }
 
 const imgData = [
-  {id: 0, imgSource: require('./assets/image1.jpg')},
-  {id: 1, imgSource: require('./assets/image2.jpg')},
-  {id: 2, imgSource: require('./assets/image3.jpg')},
-  {id: 3, imgSource: require('./assets/image4.jpg')},
-  {id: 4, imgSource: require('./assets/image5.jpg')},
-  {id: 5, imgSource: require('./assets/image1.jpg')},
+  { id: 0, imgSource: require('./assets/image1.jpg') },
+  { id: 1, imgSource: require('./assets/image2.jpg') },
+  { id: 2, imgSource: require('./assets/image3.jpg') },
+  { id: 3, imgSource: require('./assets/avatar.jpg') },
+  { id: 4, imgSource: require('./assets/image5.jpg') },
+  { id: 5, imgSource: require('./assets/image4.jpg') },
 ];
 
 const centerImgData = Math.floor(imgData.length / 2);
